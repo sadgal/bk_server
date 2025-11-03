@@ -103,7 +103,8 @@ aResponse = await fetch('http://localhost:11434/api/generate', {
 //////////////////////////////////////////////////////////////
 // Assurez-vous de remplacer ces placeholders par vos valeurs réelles
 //const OPENROUTER_API_KEY ="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";
-const OPENROUTER_API_KEY = "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";
+//const OPENROUTER_API_KEY ="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";
+const OPENROUTER_API_KEY = "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";
 //const OPENROUTER_API_KEY ="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",
 const YOUR_SITE_URL = "<YOUR_SITE_URL>"; // Optionnel
 const YOUR_SITE_NAME = "<YOUR_SITE_NAME>"; // Optionnel
