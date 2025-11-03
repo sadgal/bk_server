@@ -1,6 +1,7 @@
 // src1/services/llm.service.ts
 import axios from 'axios';
 import OpenAI from "openai";
+
 //import { NextRequest, NextResponse } from 'next/server';
 
 interface article {
@@ -132,7 +133,15 @@ aResponse = await fetch('http://localhost:11434/api/generate', {
 ////    LLMS sur OPENROUTER
 //////////////////////////////////////////////////////////////
 // Assurez-vous de remplacer ces placeholders par vos valeurs réelles
-const OPENROUTER_API_KEY = "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";
+
+//const OPENROUTER_API_KEY ="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";
+
+//const OPENROUTER_API_KEY ="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";
+const OPENROUTER_API_KEY ="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";
+//const OPENROUTER_API_KEY ="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",
+
+
+
 const YOUR_SITE_URL = "<YOUR_SITE_URL>"; // Optionnel
 const YOUR_SITE_NAME = "<YOUR_SITE_NAME>"; // Optionnel
 
@@ -147,7 +156,7 @@ const client = new OpenAI({
 export async function getOpenAIChatCompletion(articles: { title: string; summary: string }[]): Promise<any> {
 
 
-        console.log('COMPLETION: ....')
+
 
     const context = articles.map(a => `- ${a.title}\n  Résumé: ${a.summary.slice(0, 150)}...\n`).join('\n');
 
@@ -186,17 +195,18 @@ Réponse en anglais, sans titre, en style journalistique.
 
 
        // const model_llm = "alibaba/tongyi-deepresearch-30b-a3b:free";
-       // const model_llm ="minimax/minimax-m2:free";
-       const model_llm ="nvidia/nemotron-nano-12b-v2-vl:free";
+    //const model_llm ="minimax/minimax-m2:free";
+    //   const model_llm ="nvidia/nemotron-nano-12b-v2-vl:free";
        //////  const model_llm ="deepseek/deepseek-chat-v3.1:free";
-    //const model_llm ="openai/gpt-oss-20b:free";
+    const model_llm ="openai/gpt-oss-20b:free";
     //    const model_llm ="qwen/qwen3-coder:free";
     //////const model_llm ="moonshotai/kimi-k2:free";
     /////   const model_llm ="tngtech/deepseek-r1t2-chimera:free";
     ////// const model_llm ="moonshotai/kimi-dev-72b:free";
-      //  const model_llm ="qwen/qwen3-30b-a3b:free";
+     ////   const model_llm ="qwen/qwen3-30b-a3b:free";
 
 
+    console.log('COMPLETION: ....avec :',model_llm)
     try {
         const completion = await client.chat.completions.create({
             // Configuration des en-têtes HTTP supplémentaires via l'option 'headers'
