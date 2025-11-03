@@ -102,9 +102,9 @@ aResponse = await fetch('http://localhost:11434/api/generate', {
 ////    LLMS sur OPENROUTER
 //////////////////////////////////////////////////////////////
 // Assurez-vous de remplacer ces placeholders par vos valeurs réelles
-//const OPENROUTER_API_KEY = "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";
-//const OPENROUTER_API_KEY ="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";
-const OPENROUTER_API_KEY = "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";
+//const OPENROUTER_API_KEY ="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";
+const OPENROUTER_API_KEY = "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";
+//const OPENROUTER_API_KEY ="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",
 const YOUR_SITE_URL = "<YOUR_SITE_URL>"; // Optionnel
 const YOUR_SITE_NAME = "<YOUR_SITE_NAME>"; // Optionnel
 const client = new openai_1.default({
