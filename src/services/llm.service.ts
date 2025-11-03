@@ -187,14 +187,14 @@ Réponse en anglais, sans titre, en style journalistique.
 
        // const model_llm = "alibaba/tongyi-deepresearch-30b-a3b:free";
        // const model_llm ="minimax/minimax-m2:free";
-       //const model_llm ="nvidia/nemotron-nano-12b-v2-vl:free";
+       const model_llm ="nvidia/nemotron-nano-12b-v2-vl:free";
        //////  const model_llm ="deepseek/deepseek-chat-v3.1:free";
     //const model_llm ="openai/gpt-oss-20b:free";
     //    const model_llm ="qwen/qwen3-coder:free";
     //////const model_llm ="moonshotai/kimi-k2:free";
     /////   const model_llm ="tngtech/deepseek-r1t2-chimera:free";
     ////// const model_llm ="moonshotai/kimi-dev-72b:free";
-        const model_llm ="qwen/qwen3-30b-a3b:free";
+      //  const model_llm ="qwen/qwen3-30b-a3b:free";
 
 
     try {
