@@ -51,9 +51,9 @@ const NEWS_SOURCES = [
     'https://hackernoon.com/feed',
     'https://www.quora.com/rss/topics/24449/Artificial-intelligence',
     'https://arxiv.org/rss/cs.CL',
-    //   'https://huggingface.co/blog/rss',
-    //    'https://openai.com/blog/rss',
-    //    'https://www.anthropic.com/news/rss',
+    'https://huggingface.co/blog/rss',
+    'https://openai.com/blog/rss',
+    'https://www.anthropic.com/news/rss',
 ];
 const KEYWORDS = [
     'llm', 'large language model', 'gpt', 'gemini', 'claude', 'mistral', 'qwen',
@@ -182,5 +182,5 @@ async function fetchLatestArticlesF() {
     const uniqueArticles = Array.from(new Map(allArticles.map(a => [a.url, a])).values());
     return uniqueArticles
         .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-        .slice(0, 16);
+        .slice(0, 12);
 }

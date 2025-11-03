@@ -1,8 +1,11 @@
 // src1/routes/api.routes.ts
 import { Router } from 'express';
-import { fetchLatestArticlesF } from '../services/fetchNews';
+import { fetchLatestArticlesF} from '../services/fetchNews';
+
 import { fetchLatestArticles } from '../services/rss.service';
-//import { generateSummaryFromArticles } from '../services/llm.service';
+//import { generateSummaryFromArticles, getOpenAIChatCompletion } from '../services/llm.service';
+import {  getOpenAIChatCompletion } from '../services/llm.service';
+
 //import { getModelsAndPlatforms } from '../services/models.service';
 //import { getCommunityOpinions, submitPlatformFeedback } from '../services/feedback.service';
 
@@ -26,12 +29,21 @@ router.get('/home', async (req, res) => {
         }
 ***/
         const articles = await fetchLatestArticlesF();
-        /*****************************************************************
+
+        /************************************
         const summary = await generateSummaryFromArticles(
             articles.map(a => ({ title: a.title, summary: a.summary }))
         );
-****************************************/
-        const summary='Pas de synthèse'
+          *******************************/
+
+
+        const summary = await getOpenAIChatCompletion(
+            articles.map(a => ({ title: a.title, summary : a.excerpt }))
+        );
+
+
+
+        //const summary='Pas de synthèse'
         const data = { summary, articles };
         //homeCache = { data, timestamp: now };
         res.json(data);

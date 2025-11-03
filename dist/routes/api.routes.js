@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // src1/routes/api.routes.ts
 const express_1 = require("express");
 const fetchNews_1 = require("../services/fetchNews");
-//import { generateSummaryFromArticles } from '../services/llm.service';
+//import { generateSummaryFromArticles, getOpenAIChatCompletion } from '../services/llm.service';
+const llm_service_1 = require("../services/llm.service");
 //import { getModelsAndPlatforms } from '../services/models.service';
 //import { getCommunityOpinions, submitPlatformFeedback } from '../services/feedback.service';
 const router = (0, express_1.Router)();
@@ -23,12 +24,13 @@ router.get('/home', async (req, res) => {
         }
 ***/
         const articles = await (0, fetchNews_1.fetchLatestArticlesF)();
-        /*****************************************************************
+        /************************************
         const summary = await generateSummaryFromArticles(
             articles.map(a => ({ title: a.title, summary: a.summary }))
         );
-****************************************/
-        const summary = 'Pas de synthèse';
+          *******************************/
+        const summary = await (0, llm_service_1.getOpenAIChatCompletion)(articles.map(a => ({ title: a.title, summary: a.excerpt })));
+        //const summary='Pas de synthèse'
         const data = { summary, articles };
         //homeCache = { data, timestamp: now };
         res.json(data);
