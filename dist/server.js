@@ -51,15 +51,18 @@ app.use('/api', api_routes_1.default);
 app.get('/', (req, res) => {
     res.json({ message: 'AI Platform Backend – Ready!' });
 });
-/***
-const host = '192.168.1.22';
-//const host = '0.0.0.0';
-app.listen(PORT, host, () => {
-    console.log(`Le serveur ${host} écoute sur le port ${PORT}`);
-    console.log(`Le serveur est accessible depuis l'adresse IP externe.`);
-});
-***/
+//const host = '192.168.1.22';
+const host = '0.0.0.0';
+if (typeof PORT === "number") {
+    app.listen(PORT, host, () => {
+        console.log(`Le serveur ${host} écoute sur le port ${PORT}`);
+        console.log(`Le serveur est accessible depuis l'adresse IP externe.`);
+    });
+}
+/**
 app.listen(PORT, () => {
     console.log(`✅ Backend démarré sur http://localhost:${PORT}`);
     console.log(`🧠 Assurez-vous qu’Ollama tourne sur http://localhost:11434`);
+
 });
+**/

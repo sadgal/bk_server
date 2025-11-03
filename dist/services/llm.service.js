@@ -102,7 +102,8 @@ aResponse = await fetch('http://localhost:11434/api/generate', {
 ////    LLMS sur OPENROUTER
 //////////////////////////////////////////////////////////////
 // Assurez-vous de remplacer ces placeholders par vos valeurs réelles
-const OPENROUTER_API_KEY = "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";
+//const OPENROUTER_API_KEY = "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";
+const OPENROUTER_API_KEY = "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";
 const YOUR_SITE_URL = "<YOUR_SITE_URL>"; // Optionnel
 const YOUR_SITE_NAME = "<YOUR_SITE_NAME>"; // Optionnel
 const client = new openai_1.default({
@@ -144,15 +145,15 @@ Réponse en anglais, sans titre, en style journalistique.
 
   `;
     // const model_llm = "alibaba/tongyi-deepresearch-30b-a3b:free";
-    // const model_llm ="minimax/minimax-m2:free";
-    //const model_llm ="nvidia/nemotron-nano-12b-v2-vl:free";
+    const model_llm = "minimax/minimax-m2:free";
+    //   const model_llm ="nvidia/nemotron-nano-12b-v2-vl:free";
     //////  const model_llm ="deepseek/deepseek-chat-v3.1:free";
     //const model_llm ="openai/gpt-oss-20b:free";
     //    const model_llm ="qwen/qwen3-coder:free";
     //////const model_llm ="moonshotai/kimi-k2:free";
     /////   const model_llm ="tngtech/deepseek-r1t2-chimera:free";
     ////// const model_llm ="moonshotai/kimi-dev-72b:free";
-    const model_llm = "qwen/qwen3-30b-a3b:free";
+    ////   const model_llm ="qwen/qwen3-30b-a3b:free";
     try {
         const completion = await client.chat.completions.create({
             // Configuration des en-têtes HTTP supplémentaires via l'option 'headers'
