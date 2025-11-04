@@ -139,7 +139,7 @@ aResponse = await fetch('http://localhost:11434/api/generate', {
 //const OPENROUTER_API_KEY ="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";
 //const OPENROUTER_API_KEY ="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";
 //const OPENROUTER_API_KEY ="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",
-const OPENROUTER_API_KEY ="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"
+const OPENROUTER_API_KEY ="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"
 
 
 const YOUR_SITE_URL = "<YOUR_SITE_URL>"; // Optionnel
