@@ -36,12 +36,12 @@ router.get('/home', async (req, res) => {
         );
           *******************************/
 
-        /*
+
 
         const summary = await getOpenAIChatCompletion(
             articles.map(a => ({ title: a.title, summary : a.excerpt }))
         );
-*/
+
 
 
 
